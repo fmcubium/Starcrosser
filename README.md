@@ -3,4 +3,4 @@ The size and properties of interstellar space are often incorrectly perceived or
 
 This is a temporary bad README to serve as a filler.
 
-COP3530 Project 3
+COP3530 Project 3, Group 74.
