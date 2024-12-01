@@ -1,0 +1,9 @@
+# Ignore for VS users
+.vs/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+
+# Dataset (might remove later)
+dataset/
