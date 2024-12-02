@@ -7,3 +7,6 @@
 
 # Dataset (might remove later)
 dataset/
+
+# Program builds
+x64/
