@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>Milky_Way_Galaxy.jpg</file>
+    </qresource>
+</RCC>
