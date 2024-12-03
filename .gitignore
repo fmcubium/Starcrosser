@@ -10,3 +10,4 @@ dataset/
 
 # Program builds
 x64/
+parse.cpp
