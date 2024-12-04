@@ -74,7 +74,7 @@ void parseStarConnections(const string& filename, map<string, vector<pair<string
             string star_entry;
             vector<pair<string, double>> connections;
             connections.reserve(10); // to optimize and save performance so we don't need reallocation
-
+            // Ref: https://en.cppreference.com/w/cpp/container/vector/reserve
             while (getline(ss, star_entry, '|')) { // read up to "|"
                 string star_id;
                 double star_value;
@@ -84,6 +84,7 @@ void parseStarConnections(const string& filename, map<string, vector<pair<string
                 }
             }
             // Add the source_ID and adj_list to graph
+            // Ref to move(); https://en.cppreference.com/w/cpp/utility/move
             data[source_id] = move(connections); // move(); helps prevent unecessary copying from connections.
         }
     }
@@ -98,13 +99,48 @@ void loadGraph(map<string, vector<pair<string, double>>>& graph) {
     }
 }
 
+
+
+
+void parseAttributes(map<string, vector<double>> &attributes) {
+    // retVal map
+
+    // open csv
+    ifstream file("starcrosser_ui\\model\\Data\\star_attributes.csv");
+    if (!file.is_open()) {
+        cerr << "Unable to open file CSV" << endl;
+    }
+
+    string line;
+    // skip header
+    getline(file, line);
+
+    // Read each line of the file
+    while (getline(file, line)) {
+        stringstream ss(line);
+        string source_id, l_str, b_str, r_distance_str;
+
+        // read each column from the csv line
+        if (getline(ss, source_id, ',') && getline(ss, l_str, ',') && getline(ss, b_str, ',') && getline(ss, r_distance_str)) {
+            
+            // convert to data types
+            double l = stod(l_str);
+            double b = stod(b_str);
+            double r_distance = stod(r_distance_str);
+            
+            // store in the vector
+            attributes[source_id] = {l, b, r_distance};
+        
+        }
+    }
+    file.close();
+}
+
+
 // Main/Test function
 /*
 int main() {
-    map<string, vector<pair<string, double>>> graph;
-    loadGraph(graph);
-    cout << "Map Size: " << graph.size() << endl;
-
+    map<string, vector<double>> attributes = parseAttributes();
 
     return 0;
 }
