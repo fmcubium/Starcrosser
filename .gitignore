@@ -11,3 +11,7 @@ dataset/
 # Program builds
 x64/
 parse.cpp
+
+# CMakeLists - Contains a hardcoded directory, see CMakeLists_guide instead
+starcrosser_ui/CMakeLists.txt
+
