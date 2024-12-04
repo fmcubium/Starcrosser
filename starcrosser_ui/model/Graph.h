@@ -7,7 +7,7 @@ using namespace std;
 
 class Graph {
 	//These maps will make up our graph
-	map<unsigned long, vector<pair<unsigned long, int>>> data;
+	map<string, vector<pair<string, double>>> data;
 
 
 public:
