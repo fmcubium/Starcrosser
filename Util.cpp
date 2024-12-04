@@ -77,3 +77,24 @@ long long Util::dijkstra(string start, string end, vector<string>& path, double&
     auto endTime = chrono::high_resolution_clock::now();
     return endTime.time_since_epoch().count() - startTime.time_since_epoch().count();
 }
+
+long long Util::aStar(string start, string end, vector<string>& path, double& minDist) {
+    //A* algorithm is implemented using pseudocode from https://brilliant.org/wiki/a-star-search/
+
+    //Time the algorithm
+    auto startTime = chrono::high_resolution_clock::now();
+
+    //cool helper data structures
+    unordered_map<string, double> open;
+    unordered_map<string, double> closed;
+
+    //initialize lists and search - we are guaranteed that each string is unique
+    open[start] = 0;
+    bool found = false;
+
+    //TODO: consider edge case where we do not reach the end
+    while(!found) {
+        //find star w smallest f(n)
+        string minKey = "";
+    }
+}
