@@ -1,9 +1,0 @@
-C:/Users/sirga/OneDrive/Documents/Learn QT/starcrosser_ui/build/Desktop_Qt_6_8_1_llvm_mingw_64_bit-Debug/CMakeFiles/starcrosser_ui.dir
-C:/Users/sirga/OneDrive/Documents/Learn QT/starcrosser_ui/build/Desktop_Qt_6_8_1_llvm_mingw_64_bit-Debug/CMakeFiles/edit_cache.dir
-C:/Users/sirga/OneDrive/Documents/Learn QT/starcrosser_ui/build/Desktop_Qt_6_8_1_llvm_mingw_64_bit-Debug/CMakeFiles/rebuild_cache.dir
-C:/Users/sirga/OneDrive/Documents/Learn QT/starcrosser_ui/build/Desktop_Qt_6_8_1_llvm_mingw_64_bit-Debug/CMakeFiles/list_install_components.dir
-C:/Users/sirga/OneDrive/Documents/Learn QT/starcrosser_ui/build/Desktop_Qt_6_8_1_llvm_mingw_64_bit-Debug/CMakeFiles/install.dir
-C:/Users/sirga/OneDrive/Documents/Learn QT/starcrosser_ui/build/Desktop_Qt_6_8_1_llvm_mingw_64_bit-Debug/CMakeFiles/install/local.dir
-C:/Users/sirga/OneDrive/Documents/Learn QT/starcrosser_ui/build/Desktop_Qt_6_8_1_llvm_mingw_64_bit-Debug/CMakeFiles/install/strip.dir
-C:/Users/sirga/OneDrive/Documents/Learn QT/starcrosser_ui/build/Desktop_Qt_6_8_1_llvm_mingw_64_bit-Debug/CMakeFiles/starcrosser_ui_autogen_timestamp_deps.dir
-C:/Users/sirga/OneDrive/Documents/Learn QT/starcrosser_ui/build/Desktop_Qt_6_8_1_llvm_mingw_64_bit-Debug/CMakeFiles/starcrosser_ui_autogen.dir
