@@ -72,7 +72,7 @@ void parseStarConnections(const string& filename, map<string, vector<pair<string
             string star_entry;
             vector<pair<string, double>> connections;
             connections.reserve(10); // to optimize and save performance so we don't need reallocation
-
+            // Ref: https://en.cppreference.com/w/cpp/container/vector/reserve
             while (getline(ss, star_entry, '|')) { // read up to "|"
                 string star_id;
                 double star_value;
@@ -82,6 +82,7 @@ void parseStarConnections(const string& filename, map<string, vector<pair<string
                 }
             }
             // Add the source_ID and adj_list to graph
+            // Ref to move(); https://en.cppreference.com/w/cpp/utility/move
             data[source_id] = move(connections); // move(); helps prevent unecessary copying from connections.
         }
     }
