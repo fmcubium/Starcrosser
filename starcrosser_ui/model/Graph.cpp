@@ -6,6 +6,7 @@
 Graph::Graph() {
 	//load up all the vertices from the data
 	loadGraph(data);
+	parseAttributes(attributes);
 }
 
 float Graph::distGalactic(string s1, string s2) {
@@ -32,6 +33,12 @@ vector<pair<string, double>> Graph::getAdjacent(string id) {
 map<string, vector<pair<string, double>>> Graph::getData() {
 	return data;
 }
+
+
+map<string, vector<double>> Graph::getAttributes(){
+	return attributes;	
+}
+
 
 void Graph::finalize() {
 	delete instance;
