@@ -72,7 +72,7 @@ An adjacency list allows quick access to the neighbors of the central vertex (th
 ## References
 - [QTCreator](https://doc.qt.io/qtcreator/) Docs
 - [Kaggle](https://www.kaggle.com/datasets/solorzano/rave-dr5-gaia-dr2-consolidated) Data
-- [something....](https://docs.python.org/3/library/json.html) Docs
+- [A* Algorithm](https://brilliant.org/wiki/a-star-search/) Reference
 
 
 [Back To The Top](#starcrosser)
