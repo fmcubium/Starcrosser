@@ -9,6 +9,7 @@ using namespace std;
 class Graph {
 	//These maps will make up our graph
 	map<string, vector<pair<string, double>>> data;
+	map<string, vector<double>> attributes;
 
 	static Graph* instance;
 	//Private constructor
@@ -28,6 +29,9 @@ public:
 
 	//Get the data from the graph
 	map<string, vector<pair<string, double>>> getData();
+
+	//Get Star Attributes
+	map<string, vector<double>> getAttributes();
 
 	//destroy the instance
 	static void finalize();
