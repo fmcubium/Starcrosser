@@ -17,6 +17,8 @@ set(PROJECT_SOURCES
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
+        model/Graph.cpp
+        controller/Util.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
