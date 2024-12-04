@@ -11,3 +11,6 @@ dataset/
 # Program builds
 x64/
 parse.cpp
+
+# Real CMakeListsText
+starcrosser_ui/CMakeLists.txt
