@@ -9,7 +9,7 @@
 #include <chrono>
 #include <limits>
 
-#include "model/Graph.h"
+#include "../model/Graph.h"
 
 using namespace std;
 
