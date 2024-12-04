@@ -2,44 +2,44 @@
 
 // PRIVATE //
 
-bool Util::further(pair<unsigned long, double> p1, pair<unsigned long, double> p2) {
+bool Util::further(pair<string, double> p1, pair<string, double> p2) {
     return p1.second > p2.second;
 }
 
 
 // PUBLIC //
 
-long long Util::dijkstra(unsigned long start, unsigned long end, vector<unsigned long>& path, double& minDist) {
+long long Util::dijkstra(string start, string end, vector<string>& path, double& minDist) {
     //algorithm implemented with help of pseudocode from Graph Algorithms slides
 
     //time the algorithm
     auto startTime = chrono::high_resolution_clock::now();
 
     //cool and useful helper structures
-    stack<unsigned long> helper;
-    unordered_set<unsigned long> visited;
-    unordered_set<unsigned long> notVisited;
-    unordered_map<unsigned long, double> dist;
-    unordered_map<unsigned long, unsigned long> prev;
+    stack<string> helper;
+    unordered_set<string> visited;
+    unordered_set<string> notVisited;
+    unordered_map<string, double> dist;
+    unordered_map<string, string> prev;
 
     //push everything on the graph into the queue (uncomment once carson implements loading into the graph)
     dist[start] = 0;
     visited.insert(start);
-    prev[start] = -1;
+    prev[start] = "";
 
     // for(auto iter = graph.get().begin(); iter != graph.get().end(); iter++) {
     //     if(iter->first != start) {
-    //         dist[iter->first] = numeric_limits<unsigned long>::max());
+    //         dist[iter->first] = numeric_limits<double>::max());
     //         notVisited.insert(iter->first);
-    //         prev[iter->first] = -1;
+    //         prev[iter->first] = "";
     //     }
     // }
 
     while(!notVisited.empty()) {
         //for all u in notVisited, find the smallest dist[u]
-        unsigned long minKey = 0;
+        string minKey = 0;
         double min = numeric_limits<double>::max();
-        for(unsigned long l : notVisited) {
+        for(string l : notVisited) {
             if(dist[l] < min) {
                 min = dist[l];
                 minKey = l;
@@ -52,7 +52,7 @@ long long Util::dijkstra(unsigned long start, unsigned long end, vector<unsigned
 
         //for all v adjacent to u in notVisited, relax
 
-        // for(pair<unsigned long, int> p : graph) {
+        // for(pair<string, int> p : graph) {
         //     if(notVisited.count(p.first) && dist[p.first] > dist[minKey] + p.second) {
         //         dist[p.first] = dist[minKey] + p.second;
         //         prev[p.first] = minKey;
@@ -64,8 +64,8 @@ long long Util::dijkstra(unsigned long start, unsigned long end, vector<unsigned
     //backtracking
     minDist = dist[end];
 
-    unsigned long cur = end;
-    while(prev[cur] != -1) {
+    string cur = end;
+    while(prev[cur] != "") {
         helper.push(cur);
         cur = prev[cur];
     }
@@ -76,4 +76,25 @@ long long Util::dijkstra(unsigned long start, unsigned long end, vector<unsigned
 
     auto endTime = chrono::high_resolution_clock::now();
     return endTime.time_since_epoch().count() - startTime.time_since_epoch().count();
+}
+
+long long Util::aStar(string start, string end, vector<string>& path, double& minDist) {
+    //A* algorithm is implemented using pseudocode from https://brilliant.org/wiki/a-star-search/
+
+    //Time the algorithm
+    auto startTime = chrono::high_resolution_clock::now();
+
+    //cool helper data structures
+    unordered_map<string, double> open;
+    unordered_map<string, double> closed;
+
+    //initialize lists and search - we are guaranteed that each string is unique
+    open[start] = 0;
+    bool found = false;
+
+    //TODO: consider edge case where we do not reach the end
+    while(!found) {
+        //find star w smallest f(n)
+        string minKey = "";
+    }
 }
