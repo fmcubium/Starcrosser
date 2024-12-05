@@ -3,6 +3,7 @@
 #include <vector>
 #include <map>
 #include <string>
+#include <cmath>
 
 using namespace std;
 
@@ -18,7 +19,7 @@ class Graph {
 public:
 
 	//Calculate distance in galactic coordinates
-	static float distGalactic(string s1, string s2);
+	static double distGalactic(string s1, string s2);
 
 	static void create();
 
