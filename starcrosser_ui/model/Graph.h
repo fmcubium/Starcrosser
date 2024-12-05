@@ -12,18 +12,17 @@ class Graph {
 	map<string, vector<pair<string, double>>> data;
 	map<string, vector<double>> attributes;
 
-	static Graph* instance;
-	//Private constructor
-	Graph();
+	//static Graph* instance;
 
 public:
+	Graph();
 
 	//Calculate distance in galactic coordinates
-	static double distGalactic(string s1, string s2);
+	double distGalactic(string s1, string s2);
 
-	static void create();
+	//static void create();
 
-	static Graph* getInstance();
+	//static Graph* getInstance();
 
 	//Get adjacent stars based on ID
 	vector<pair<string, double>> getAdjacent(string id);
@@ -35,6 +34,6 @@ public:
 	map<string, vector<double>> getAttributes();
 
 	//destroy the instance
-	static void destroy();
+	//static void destroy();
 
 };

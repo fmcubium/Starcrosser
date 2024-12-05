@@ -8,7 +8,7 @@ bool Util::further(pair<string, double> p1, pair<string, double> p2) {
 
 // PUBLIC //
 
-long long Util::dijkstra(string start, string end, vector<string>& path, double& minDist) {
+long long Util::dijkstra(string start, string end, Graph* graph, vector<string>& path, double& minDist) {
     //algorithm implemented with help of pseudocode from Graph Algorithms slides
 
     //time the algorithm
@@ -26,7 +26,7 @@ long long Util::dijkstra(string start, string end, vector<string>& path, double&
     notVisited.insert(start);
     prev[start] = "";
 
-    for(auto iter = Graph::getInstance()->getData().begin(); iter != Graph::getInstance()->getData().end(); ++iter) {
+    for(auto iter = graph->getData().begin(); iter != graph->getData().end(); ++iter) {
         if(iter->first != start) {
             dist[iter->first] = numeric_limits<double>::max();
             notVisited.insert(iter->first);
@@ -51,7 +51,7 @@ long long Util::dijkstra(string start, string end, vector<string>& path, double&
 
         //for all v adjacent to u in notVisited, relax
 
-        for(pair<string, double>& p : Graph::getInstance()->getData()[minKey]) {
+        for(pair<string, double>& p : graph->getData()[minKey]) {
             if(notVisited.count(p.first) && dist[p.first] > dist[minKey] + p.second) {
                 dist[p.first] = dist[minKey] + p.second;
                 prev[p.first] = minKey;
@@ -77,7 +77,7 @@ long long Util::dijkstra(string start, string end, vector<string>& path, double&
     return endTime.time_since_epoch().count() - startTime.time_since_epoch().count();
 }
 
-long long Util::aStar(string start, string end, vector<string>& path, double& minDist) {
+long long Util::aStar(string start, string end, Graph* graph, vector<string>& path, double& minDist) {
     //A* algorithm is implemented using pseudocode from https://brilliant.org/wiki/a-star-search/
 
     //Time the algorithm
@@ -96,7 +96,7 @@ long long Util::aStar(string start, string end, vector<string>& path, double& mi
     bool found = false;
     open.insert(start);
 
-    for(auto iter = Graph::getInstance()->getData().begin(); iter != Graph::getInstance()->getData().end(); ++iter) {
+    for(auto iter = graph->getData().begin(); iter != graph->getData().end(); ++iter) {
         if(iter->first != start) {
             gVals[iter->first] = numeric_limits<double>::max();
             prev[iter->first] = "";
@@ -108,8 +108,8 @@ long long Util::aStar(string start, string end, vector<string>& path, double& mi
         string minKey = "";
         double min = numeric_limits<double>::max();
         for(pair<string, double> p : gVals) {
-            if(p.second + Graph::distGalactic(p.first, end) < min) {
-                min = p.second + Graph::distGalactic(p.first, end);
+            if(p.second + graph->distGalactic(p.first, end) < min) {
+                min = p.second + graph->distGalactic(p.first, end);
                 minKey = p.first;
             }
         }
@@ -118,7 +118,7 @@ long long Util::aStar(string start, string end, vector<string>& path, double& mi
             found = true;
         else {
             closed.insert(minKey);
-            vector<pair<string, double>> neighbors = Graph::getInstance()->getData()[minKey];
+            vector<pair<string, double>> neighbors = graph->getData()[minKey];
 
             //perform checks
             for(pair<string, double>& neighbor : neighbors) {

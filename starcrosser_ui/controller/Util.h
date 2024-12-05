@@ -20,10 +20,10 @@ class Util {
 public:
 
     //Runs Dijkstra's Algorithm, putting the path in order in the vector and returning the time it took to run
-    static long long dijkstra(string start, string end, vector<string>& path, double& minDist);
+    static long long dijkstra(string start, string end, Graph* graph, vector<string>& path, double& minDist);
 
     //Runs the A* Algorithm, putting the path in order in the vector and returning the time it took to run
-    static long long aStar(string start, string end, vector<string>& path, double& minDist);
+    static long long aStar(string start, string end, Graph* graph, vector<string>& path, double& minDist);
 };
 
 

@@ -10,8 +10,8 @@ Graph::Graph() {
 }
 
 double Graph::distGalactic(string s1, string s2) {
-	vector<double> p1 = Graph::getInstance()->getAttributes()[s1];
-	vector<double> p2 = Graph::getInstance()->getAttributes()[s2];
+	vector<double> p1 = attributes[s1];
+	vector<double> p2 = attributes[s2];
 
 	/*
 	  l (galactic longitude) = p1[0]
@@ -23,15 +23,15 @@ double Graph::distGalactic(string s1, string s2) {
 	return dist;
 }
 
-void Graph::create() {
-	instance = new Graph();
-}
+// void Graph::create() {
+// 	instance = new Graph();
+// }
 
-Graph *Graph::getInstance() {
-	if(instance == nullptr)
-		return nullptr;
-	return instance;
-}
+// Graph *Graph::getInstance() {
+// 	if(instance == nullptr)
+// 		return nullptr;
+// 	return instance;
+// }
 
 vector<pair<string, double>> Graph::getAdjacent(string id) {
 	if(data.find(id) == data.end())
@@ -50,6 +50,6 @@ map<string, vector<double>> Graph::getAttributes(){
 }
 
 
-void Graph::destroy() {
-	delete instance;
-}
+// void Graph::destroy() {
+// 	delete instance;
+// }

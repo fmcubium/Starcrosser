@@ -8,9 +8,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     MainWindow w;
-    Graph::create();
+    //Graph::create();
     w.show();
-    int exitCode = a.exec();
-    Graph::destroy();
-    return exitCode;
+    return a.exec();
 }
