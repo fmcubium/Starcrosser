@@ -24,6 +24,12 @@ public:
 
     //Runs the A* Algorithm, putting the path in order in the vector and returning the time it took to run
     static long long aStar(string start, string end, Graph* graph, vector<string>& path, double& minDist);
+
+    //runs dijkstra's multiple times
+    static long long repDijkstra(vector<string> stars, Graph* graph, vector<string>& path, double& minDist);
+
+    //runs A* multiple times
+    static long long repAStar(vector<string> stars, Graph* graph, vector<string>& path, double& minDist);
 };
 
 
