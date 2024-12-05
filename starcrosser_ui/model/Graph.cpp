@@ -24,8 +24,7 @@ double Graph::distGalactic(string s1, string s2) {
 }
 
 void Graph::create() {
-	if(instance == nullptr)
-		instance = new Graph();
+	instance = new Graph();
 }
 
 Graph *Graph::getInstance() {
