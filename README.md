@@ -1,6 +1,5 @@
 # StarCrosser
 
-#temporary
 <div align="center">
   <img width = "100%" src="https://github.com/user-attachments/assets/7edff046-b555-4086-b39a-22fef1a81d41">
 </div>
