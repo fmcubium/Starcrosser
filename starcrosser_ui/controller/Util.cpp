@@ -148,3 +148,25 @@ long long Util::aStar(string start, string end, Graph* graph, vector<string>& pa
     auto endTime = chrono::high_resolution_clock::now();
     return endTime.time_since_epoch().count() - startTime.time_since_epoch().count();
 }
+
+long long Util::repDijkstra(vector<string> stars, Graph *graph, vector<string> &path, double &minDist) {
+    long long time = 0;
+    double tempDist = 0;
+    for(unsigned int i = 0; i < stars.size()-1; i++) {
+        time += dijkstra(stars[i], stars[i+1], graph, path, tempDist);
+        minDist += tempDist;
+    }
+
+    return time;
+}
+
+long long Util::repAStar(vector<string> stars, Graph *graph, vector<string> &path, double &minDist) {
+    long long time = 0;
+    double tempDist = 0;
+    for(unsigned int i = 0; i < stars.size()-1; i++) {
+        time += dijkstra(stars[i], stars[i+1], graph, path, tempDist);
+        minDist += tempDist;
+    }
+
+    return time;
+}
