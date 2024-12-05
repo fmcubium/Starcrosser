@@ -51,6 +51,6 @@ map<string, vector<double>> Graph::getAttributes(){
 }
 
 
-void Graph::finalize() {
+void Graph::destroy() {
 	delete instance;
 }
