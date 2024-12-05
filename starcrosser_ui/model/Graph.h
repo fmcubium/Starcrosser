@@ -35,6 +35,6 @@ public:
 	map<string, vector<double>> getAttributes();
 
 	//destroy the instance
-	static void finalize();
+	static void destroy();
 
 };
