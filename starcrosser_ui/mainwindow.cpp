@@ -6,6 +6,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
+    graph = new Graph();
     ui->setupUi(this);
 }
 
@@ -18,6 +19,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_exitButton_clicked()
 {
+    delete graph;
     this->close();
 }
 

@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "reportwindow.h"
+#include "model/Graph.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -25,5 +26,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    Graph* graph;
 };
 #endif // MAINWINDOW_H
