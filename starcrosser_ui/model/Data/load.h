@@ -93,7 +93,7 @@ void parseStarConnections(const string& filename, map<string, vector<pair<string
 // Call Func
 void loadGraph(map<string, vector<pair<string, double>>>& graph) {
     try {
-        parseStarConnections("starcrosser_ui\\model\\Data\\closest_stars.csv", graph);
+        parseStarConnections("starcrosser_ui/model/Data/closest_stars.csv", graph);
     } catch (...) {
         cerr << "Error: Unable to open CSV." << endl;
     }
@@ -106,7 +106,7 @@ void parseAttributes(map<string, vector<double>> &attributes) {
     // retVal map
 
     // open csv
-    ifstream file("starcrosser_ui\\model\\Data\\star_attributes.csv");
+    ifstream file("starcrosser_ui/model/Data/star_attributes.csv");
     if (!file.is_open()) {
         cerr << "Unable to open file CSV" << endl;
     }
